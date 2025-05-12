@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Setopati Ad Hider",
+    "version": "0.1.0",
+    "description": "Hides the pesky ads and banners on Setopati.com.",
+    "author": "Anup Khanal",
+    "homepage_url": "https://anupk.com.np/",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.setopati.com/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "icons": {
+      "128": "assets/icon128.png"
+    }
+  }
