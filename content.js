@@ -139,9 +139,14 @@ const observer = new MutationObserver((mutationsList) => {
     }
 });
 
+// apply after loaded
+window.addEventListener('load', hideAds);
+
+
 // See the document body for added nodes and attribute changes
 observer.observe(document.documentElement, {
     childList: true,
     subtree: true,
     attributes: true,
+    attributeFilter: ['class', 'style', 'href'] // as most ads are links or have a certain class, only observe those attributes
 });
